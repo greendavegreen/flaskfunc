@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  app:
+    image: dockreg:5000/vmru-app:1.1.1
+    environment:
+      - DJANGO_DEFAULT_HOST=vmsareus.lebanon.cd-adapco.com
+      - DJANGO_MANAGEPY_MIGRATE=on
+      - DJANGO_MANAGEPY_COLLECTSTATIC=on
+    deploy:
+      # RUN ONE ONLY
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+networks:
+    traefik-net:
+        external: true
