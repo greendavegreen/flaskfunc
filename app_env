@@ -1,2 +1,4 @@
 
 CONF_NUMBER=1
+SRC_BUCKET=dropzone
+DEST_BUCKET=processed
